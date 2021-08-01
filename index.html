@@ -1,0 +1,153 @@
+<title>Technical C Documentation</title>
+<link rel="stylesheet" href="style.css">
+<nav id="navbar">
+    <header>C Documentation</header>
+    <ul>
+        <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+        <li><a class="nav-link" href="#Hello_world">Hello world</a></li>
+        <li><a class="nav-link" href="#Variables">Variables</a></li>
+        <li><a class="nav-link" href="#Conditions">Conditions</a></li>
+        <li><a class="nav-link" href="#Loops">Loops</a></li>
+        <li><a class="nav-link" href="#Functions">Functions</a></li>
+    </ul>
+</nav>
+
+<main id="main-doc">
+<section class="main-section" id="Introduction">
+    <header>Introduction</header>
+    <article>
+    <p>C is a general-purpose, procedural computer programming language supporting structured programming, lexical variable scope, and recursion, with a static type system. By design, C provides constructs that map efficiently to typical machine instructions. It has found lasting use in applications previously coded in assembly language. Such applications include operating systems and various application software for computer architectures that range from supercomputers to PLCs and embedded systems.</p>
+    
+    <p>A successor to the programming language B, C was originally developed at Bell Labs by Dennis Ritchie between 1972 and 1973 to construct utilities running on Unix. It was applied to re-implementing the kernel of the Unix operating system. During the 1980s, C gradually gained popularity. It has become one of the most widely used programming languages, with C compilers from various vendors available for the majority of existing computer architectures and operating systems. C has been standardized by ANSI since 1989 (ANSI C) and by the International Organization for Standardization (ISO).</p>
+    
+    <p>C is an imperative procedural language. It was designed to be compiled to provide low-level access to memory and language constructs that map efficiently to machine instructions, all with minimal runtime support. Despite its low-level capabilities, the language was designed to encourage cross-platform programming. A standards-compliant C program written with portability in mind can be compiled for a wide variety of computer platforms and operating systems with few changes to its source code.</p>
+    </article>
+</section>
+
+<section class="main-section" id="Hello_world">
+    <header>Hello world</header>
+    <article>
+    <p>The first step is to learn how to say Hello World in C, which is quite simple. The code is:</p>
+    <code>
+        #include <stdio.h>
+        int main(){
+        printf("Hello, World!");
+        return 0;
+        }
+    </code>
+    <p>Ok! But how it works?</p>
+    <ul>
+        <li>The <strong>#include</strong> is a preprocessor command that tells the compiler to include the contents of <strong>stdio.h</strong> (standard input and output) file in the program.</li>
+        <li>The <strong>stdio.h</strong> file contains functions such as <strong>scanf()</strong> and <strong>printf()</strong> to take input and display output respectively.</li>
+        <li>If you use the <strong>printf()</strong> function without writing #include <stdio.h>, the program will not compile.</li>
+        <li>The execution of a C program starts from the <strong>main()</strong> function.</li>
+        <li><strong>printf()</strong> is a library function to send formatted output to the screen. In this program, <strong>printf()</strong> displays Hello, World! text on the screen.</li>
+        <li>The <strong>return 0;</strong> statement is the "Exit status" of the program. In simple terms, the program ends with this statement.</li>
+    </ul>  
+    </article>
+</section>
+    
+<section class="main-section" id="Variables">
+    <header>Variables</header>
+    <article>
+    <p>A variable is nothing but a name given to a storage area that our programs can manipulate. Each variable in C has a specific type, which determines the size and layout of the variable's memory; the range of values that can be stored within that memory; and the set of operations that can be applied to the variable.</p>
+    
+    <p>The name of a variable can be composed of letters, digits, and the underscore character. It must begin with either a letter or an underscore. Upper and lowercase letters are distinct because C is case-sensitive. Based on the basic types explained in the previous chapter, there will be the following basic variable types:</p>
+    
+    <ul>
+        <li><strong>char</strong>: Typically a single octet(one byte). It is an integer type.</li>
+        <li><strong>int</strong>: The most natural size of integer for the machine.</li>
+        <li><strong>float</strong>: A single-precision floating point value.</li>
+        <li><strong>double</strong>: A double-precision floating point value.</li>
+        <li><strong>void</strong>: Represents the absence of type.</li>
+    </ul>
+    
+    <p>A variable definition tells the compiler where and how much storage to create for the variable. A variable definition specifies a data type and contains a list of one or more variables of that type as follows:</p>
+    <code>
+        int i, j, k;
+        char c, ch;
+        float f, salary;
+        double d;
+    </code>
+    <code>
+        extern int d = 3, f = 5;    // declaration of d and f. 
+        int d = 3, f = 5;           // definition and initializing d and f. 
+        byte z = 22;                // definition and initializes z. 
+        char x = 'x';               // the variable x has the value 'x'.
+    </code>
+    <p>A variable declaration provides assurance to the compiler that there exists a variable with the given type and name so that the compiler can proceed for further compilation without requiring the complete detail about the variable. A variable definition has its meaning at the time of compilation only, the compiler needs actual variable definition at the time of linking the program.</p>
+    </article>
+</section>
+    
+<section class="main-section" id="Conditions">
+    <header>Conditions</header>
+    <article>
+    <p>Conditional Statements in C programming are used to make decisions based on the conditions. Conditional statements execute sequentially when there is no condition around the statements. If you put some condition for a block of statements, the execution flow may change based on the result evaluated by the condition. This process is called decision making in 'C.'</p>
+    <p><strong>If</strong>: It is one of the powerful conditional statement. If statement is responsible for modifying the flow of execution of a program. If statement is always used with a condition. The condition is evaluated first before executing any statement inside the body of If. The syntax for if statement is as follows:</p>
+    <code> 
+        if (condition){
+            instruction;
+        }
+    </code>
+    <p>You can also add the <strong>else</strong> which will active if the <strong>if</strong> statement did not activate.</p>
+    <code>
+        if (test-expression){
+        True block of statements;
+        } 
+        Else{
+        False block of statements;
+        }
+    </code>
+    </article>
+</section>
+    
+<section class="main-section" id="Loops">
+    <header>Loops</header>
+    <article>
+    <p>You may encounter situations, when a block of code needs to be executed several number of times. In general, statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on. Programming languages provide various control structures that allow for more complicated execution paths. A loop statement allows us to execute a statement or group of statements multiple times. </p>
+    <ul>
+        <li><strong>while</strong>: Repeats a statement or group of statements while a given condition is true. It tests the condition before executing the loop body.</li>
+        <li><strong>for</strong>: Executes a sequence of statements multiple times and abbreviates the code that manages the loop variable.</li>
+        <li><strong>do...while</strong>: It is more like a while statement, except that it tests the condition at the end of the loop body.</li>
+    </ul>
+    <p>A loop becomes an infinite loop if a condition never becomes false. The for loop is traditionally used for this purpose. Since none of the three expressions that form the 'for' loop are required, you can make an endless loop by leaving the conditional expression empty.</p>
+    <code>
+        #include <stdio.h>
+
+        int main () {
+            for( ; ; ) {
+            printf("This loop will run forever.\n");
+            }
+            return 0;
+        }
+    </code>
+    </article>
+</section>
+    
+<section class="main-section" id="Functions">
+    <header>Functions</header>
+    <article>
+    <p>A function is a group of statements that together perform a task. Every C program has at least one function, which is main(), and all the most trivial programs can define additional functions.</p>
+
+    <p>You can divide up your code into separate functions. How you divide up your code among different functions is up to you, but logically the division is such that each function performs a specific task.</p>
+
+    <p>A function declaration tells the compiler about a function's name, return type, and parameters. A function definition provides the actual body of the function.</p>
+    <p>Example: </p>
+    <code>
+        /* function returning the max between two numbers */
+        
+        int max(int num1, int num2) {
+            /* local variable declaration */
+            int result;
+
+            if (num1 > num2)
+            result = num1;
+            else
+            result = num2;
+
+            return result; 
+        }
+    </code>
+    </article>
+</section>
+</main>
